@@ -25,7 +25,7 @@ type Student struct {
 	gorm.Model
 	StudentNISN string        `gorm:"column:student_NISN;type:varchar(10);not null;unique"`
 	FullName    string        `gorm:"column:full_name;type:varchar(100);not null"`
-	Gender      Gender        `gorm:"column:gender;type:enum('male,'female');not null"`
+	Gender      Gender        `gorm:"column:gender;type:enum('male','female');not null"`
 	DateOfBirth *time.Time    `gorm:"column:date_of_birth"`
 	Addrress    *string       `gorm:"column:address;type:text"`
 	Status      StudentStatus `gorm:"column:status;type:enum('active','graduated','inactive')"`
