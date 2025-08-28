@@ -17,6 +17,11 @@ func main() {
 		log.Fatalf("Gagal terhubung ke database :%v", err)
 	}
 
-	_ = db
+	router := app.NewRouter(db)
+
+	log.Println("Server starting on port :8080")
+	if err := router.Run(":8080"); err != nil {
+		log.Fatalf("Failed to start server : %v", err)
+	}
 
 }
